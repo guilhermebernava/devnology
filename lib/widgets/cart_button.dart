@@ -21,43 +21,46 @@ class CartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              Icon(
-                Icons.shopping_cart_rounded,
-                size: 30,
-                color: selected ? AppColors.yellow : Colors.white,
-              ),
-              Container(
-                decoration: const BoxDecoration(
-                    color: AppColors.yellow, shape: BoxShape.circle),
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Consumer<CartProvider>(
-                    builder: (context, value, child) => Text(
-                      value.cartItens.toString(),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
+      child: SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: const Alignment(2, -3),
+              children: [
+                Icon(
+                  Icons.shopping_cart_rounded,
+                  size: 30,
+                  color: selected ? AppColors.yellow : Colors.white,
+                ),
+                Container(
+                  width: 20,
+                  decoration: const BoxDecoration(
+                      color: AppColors.yellow, shape: BoxShape.circle),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Consumer<CartProvider>(
+                      builder: (context, value, child) => Text(
+                        value.cartItens < 10 ? value.cartItens.toString() : '9',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          text
-              ? Text(
-                  'Cart',
-                  style: AppTextStyles.bottomBarButton,
-                )
-              : Container()
-        ],
+              ],
+            ),
+            text
+                ? Text(
+                    'Cart',
+                    style: AppTextStyles.bottomBarButton,
+                  )
+                : Container()
+          ],
+        ),
       ),
     );
   }
