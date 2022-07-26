@@ -36,7 +36,9 @@ class CartButton extends StatelessWidget {
                 Container(
                   width: 20,
                   decoration: const BoxDecoration(
-                      color: AppColors.yellow, shape: BoxShape.circle),
+                    color: AppColors.yellow,
+                    shape: BoxShape.circle,
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Consumer<CartProvider>(

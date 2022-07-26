@@ -42,6 +42,7 @@ class _BottombarHomeState extends State<BottombarHome> {
             ),
             CartButton(
               onPressed: () => provider.newIndex(2),
+              selected: provider.index == 2,
               text: true,
             ),
             ButtonBarButton(
