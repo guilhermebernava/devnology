@@ -9,6 +9,9 @@ class AppColors {
   static const green = Color(0xff2FC145);
   static const limaGreen = Color(0xffB4FF4E);
   static const yellow = Color(0xffF9C705);
+  static const grey = Color.fromARGB(7, 43, 51, 64);
+  static const lightGrey = Color.fromARGB(2, 43, 51, 64);
+  static const greyBottomBar = Color(0xff5A6476);
 
   static LinearGradient createGradient(List<Color> colors) =>
       LinearGradient(colors: colors);
